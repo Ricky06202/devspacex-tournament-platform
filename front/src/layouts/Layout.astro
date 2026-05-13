@@ -1,14 +1,21 @@
+---
+import {Header} from '../components/Header.tsx';
+import {Footer} from '../components/Footer.tsx';
+import '../styles/global.css';
+---
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
 		<title>Torneos DevSpaceX</title>
 	</head>
 	<body>
+<Header />
 		<slot />
+<Footer />
 	</body>
 </html>
 
