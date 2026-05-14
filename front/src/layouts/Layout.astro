@@ -1,29 +1,23 @@
 ---
-import {Header} from '../components/Header.tsx';
-import {Footer} from '../components/Footer.tsx';
-import '../styles/global.css';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import "../styles/global.css";
 ---
+
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-		<title>Torneos DevSpaceX</title>
-	</head>
-	<body>
-<Header />
-		<slot />
-<Footer />
-	</body>
+    <title>Torneos DevSpaceX</title>
+  </head>
+  <body class="bg-bg-dark text-text-primary max-w-4xl mx-auto px-4">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
