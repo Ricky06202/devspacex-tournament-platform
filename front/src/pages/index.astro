@@ -1,10 +1,20 @@
 ---
-import { Hero } from '../components/Hero';
-import Layout from '../layouts/Layout.astro';
+import Hero from "../components/landing-page/Hero";
+import Caracteristicas from "../components/landing-page/Caracteristicas";
+import Funcionamiento from "../components/landing-page/Funcionamiento";
+import ProximosTorneos from "../components/landing-page/ProximosTorneos";
+import Ranking from "../components/landing-page/Ranking";
+import CTA from "../components/landing-page/CTA";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="h-full">
+  <main class="">
     <Hero />
-  </main> 
+    <Caracteristicas />
+    <Funcionamiento />
+    <ProximosTorneos />
+    <Ranking />
+    <CTA />
+  </main>
 </Layout>
