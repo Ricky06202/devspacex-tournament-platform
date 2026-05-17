@@ -1,21 +1,29 @@
 ---
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" transition:animate="fade">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <ClientRouter />
     <title>Torneos DevSpaceX</title>
   </head>
-  <body class="bg-bg-dark text-text-primary max-w-4xl mx-auto px-4">
-    <Header />
-    <main>
+  <body>
+    <Header client:load />
+    <main class="max-w-4xl mx-auto px-4">
       <slot />
     </main>
     <Footer />

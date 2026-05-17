@@ -1,44 +1,61 @@
 const Caracteristicas = () => {
-  const caracteristicas = [
+  const items = [
     {
+      icon: "⚡",
       titulo: "Tiempo Real",
       descripcion:
-        "Todos los participantes ven el mismo problema al mismo tiempo. El reloj corre para todos.",
+        "Todos ven el mismo problema al mismo tiempo. El reloj corre para todos.",
     },
     {
-      titulo: "Tests Automaticos",
+      icon: "🧪",
+      titulo: "Tests Automáticos",
       descripcion:
-        "Escribes en Python, JavaScript o Go. Los mismos tests validan tu solucion.",
+        "Python, JavaScript o Go. Los mismos tests validan tu solución.",
     },
     {
-      titulo: "Gana el Mas Rapdido",
+      icon: "🏆",
+      titulo: "Gana el Más Rápido",
       descripcion:
-        "No importa el lenguaje. El primero en resolver correctamente, gana la ronda.",
+        "No importa el lenguaje. El primero en resolver correctamente gana la ronda.",
     },
     {
+      icon: "📊",
       titulo: "Ranking Elo",
       descripcion:
-        "Como en ajedrez. Cada torneo afecta tu puntuacion global. Sube al vencer a mejores rivales.",
+        "Como en ajedrez. Cada torneo afecta tu puntuación global.",
     },
   ];
+
   return (
-    <div>
-      <ul>
-        {caracteristicas.map((caracteristica) => (
-          <CardCaracteristicas {...caracteristica} />
+    <section className="py-24">
+      <h2 className="text-4xl font-bold text-center mb-16">
+        <span className="gradient-text">Características</span>
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {items.map((item) => (
+          <Card key={item.titulo} {...item} />
         ))}
-      </ul>
+      </div>
+    </section>
+  );
+};
+
+const Card = ({
+  icon,
+  titulo,
+  descripcion,
+}: {
+  icon: string;
+  titulo: string;
+  descripcion: string;
+}) => {
+  return (
+    <div className="glass-card p-6 group">
+      <span className="text-3xl block mb-4">{icon}</span>
+      <h3 className="text-xl font-bold text-text-primary mb-2">{titulo}</h3>
+      <p className="text-text-secondary leading-relaxed">{descripcion}</p>
     </div>
   );
 };
 
 export default Caracteristicas;
-
-const CardCaracteristicas = ({ titulo, descripcion }) => {
-  return (
-    <li>
-      <h3>{titulo}</h3>
-      <p>{descripcion}</p>
-    </li>
-  );
-};

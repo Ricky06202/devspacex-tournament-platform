@@ -1,41 +1,61 @@
 const Funcionamiento = () => {
-  const funcionamientos = [
+  const pasos = [
     {
-      titulo: "1. Te inscribes",
-      descripcion: "Entras al torneo publico o con link de invitacion",
+      numero: "01",
+      titulo: "Te inscribes",
+      descripcion: "Entras al torneo público o con link de invitación",
     },
     {
-      titulo: "2. Problema revelado",
-      descripcion: "Al inicio de la ronda, todos ven el mismo desafio.",
+      numero: "02",
+      titulo: "Problema revelado",
+      descripcion: "Al iniciar la ronda, todos ven el mismo desafío",
     },
     {
-      titulo: "3. Codeas en tu lenguaje",
+      numero: "03",
+      titulo: "Codeas",
       descripcion: "Python, JavaScript, Go... el que domines",
     },
     {
-      titulo: "4. Envias y subes",
-      descripcion:
-        "Pasas los tests privados, tu tiempo se registra. el mas rapido gana.",
+      numero: "04",
+      titulo: "Envías y subes",
+      descripcion: "Pasas los tests privados. El más rápido gana",
     },
   ];
+
   return (
-    <div>
-      <ol>
-        {funcionamientos.map((funcionamiento) => (
-          <CardFuncionamiento {...funcionamiento} />
+    <section className="py-24">
+      <h2 className="text-4xl font-bold text-center mb-16">
+        <span className="gradient-text">¿Cómo funciona?</span>
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {pasos.map((paso) => (
+          <Card key={paso.numero} {...paso} />
         ))}
-      </ol>
+      </div>
+    </section>
+  );
+};
+
+const Card = ({
+  numero,
+  titulo,
+  descripcion,
+}: {
+  numero: string;
+  titulo: string;
+  descripcion: string;
+}) => {
+  return (
+    <div className="glass-card p-6 text-center group">
+      <span className="text-4xl font-black gradient-text block mb-3">
+        {numero}
+      </span>
+      <h3 className="text-lg font-bold text-text-primary mb-2">{titulo}</h3>
+      <p className="text-text-secondary text-sm leading-relaxed">
+        {descripcion}
+      </p>
     </div>
   );
 };
 
 export default Funcionamiento;
-
-const CardFuncionamiento = ({ titulo, descripcion }) => {
-  return (
-    <div>
-      <h3>{titulo}</h3>
-      <p>{descripcion}</p>
-    </div>
-  );
-};
